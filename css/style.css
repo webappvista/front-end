@@ -22,7 +22,7 @@ body {
 
 .header {
     height: 95vh;
-    background-image: linear-gradient( to right bottom, rgba(126, 213, 111, 0.801), rgba(40, 180, 133, 0.801)), url(../img/hero.jpg);
+    background-image: linear-gradient( to right bottom, rgba(126, 213, 111, 0.563), rgba(40, 180, 133, 0.776)), url(../img/hero.jpg);
     background-size: cover;
     background-position: top;
     clip-path: polygon(0 0,100% 0, 100% 75vh, 0 100%);
@@ -37,6 +37,7 @@ body {
 .logo {
     height: 35px; 
 }
+
 .text-box {
    position: absolute;
    top: 40%;
@@ -48,16 +49,56 @@ body {
 .heading-primary {
     color: #ffffff;
     text-transform: uppercase;
+    backface-visibility: hidden;
 }
 .heading-primary-main {
     display: block;
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
 }
 .heading-primary-sub {
 display: block;
 font-size: 20px;
 font-weight: 700;
 letter-spacing: 17.4px;
+animation: moveInRight 3s ease-out;
+
+}
+@keyframes moveInLeft {
+    0% { opacity: 0;
+        transform: translateX(-100%);
+
+    }
+
+    80% {
+        transform: translateX(10%);
+        
+    }
+
+    100% {
+          opacity:  1;
+          transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+
+    0% { opacity: 0;
+        transform: translateX(100%);
+
+    }
+
+    80% {
+        transform: translateX(-10%);
+        
+    }
+
+    100% {
+          opacity:  1;
+          transform: translate(0);
+    }
 }
